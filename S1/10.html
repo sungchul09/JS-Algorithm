@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <!-- split: 해당 문자가 있는 기점으로 잘라준다 -->
+    <script>
+      function solution(s, t) {
+        let answer = 0;
+        let temp = s.split('aR');
+        answer = temp.length - 1;
+        return answer;
+      }
+
+      let str = 'aaRbbRccRRddR';
+      console.log(solution(str, 'R'));
+    </script>
+  </body>
+</html>

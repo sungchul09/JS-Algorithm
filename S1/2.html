@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer = 'YES';
+        let sum = a + b + c;
+        let maxLen = 0;
+        if (a < b) maxLen = b;
+        else maxLen = a;
+        if (maxLen < c) maxLen = c;
+
+        if (sum - maxLen >= maxLen) answer = 'NO';
+        return answer;
+      }
+
+      console.log(solution(13, 33, 26));
+    </script>
+  </body>
+</html>

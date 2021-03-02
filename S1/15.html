@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        if (s.toLowerCase() === s) {
+          let t__len = s.length;
+          let m__len = s.length / 2;
+          if (t__len % 2 == 0) {
+            answer = s.substring(m__len - 1, m__len + 1);
+          } else {
+            answer = s.substring(m__len, m__len + 1);
+          }
+        }
+        return answer;
+      }
+      console.log(solution('abcde'));
+    </script>
+  </body>
+</html>

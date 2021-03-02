@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = 0;
+        let dy = [-1, 1, 0, 0];
+        let dx = [0, 0, -1, 1];
+        let cnt = 0;
+        let dist = [''];
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr[i].length; j++) {
+            let cnt = 0;
+            for (e = 0; e < 4; e++) {
+              let cy = dy[e] + i;
+              let cx = dx[e] + j;
+              if (cy < 0 || cx < 0) continue;
+              if (cy >= arr.length || cx >= arr.length) continue;
+              if (arr[cy][cx] < arr[i][j]) cnt++;
+            }
+            if (i == 0 || i == arr.length - 1) cnt++;
+            if (j == 0 || j == arr.length - 1) cnt++;
+            if (cnt == 4) {
+              answer++;
+            }
+          }
+        }
+        return answer;
+      }
+
+      let arr = [
+        [5, 3, 7, 2, 3],
+        [3, 7, 1, 6, 1],
+        [7, 2, 5, 3, 4],
+        [4, 3, 6, 4, 1],
+        [8, 7, 3, 5, 2],
+      ];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

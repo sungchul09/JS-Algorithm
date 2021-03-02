@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = Number.MIN_SAFE_INTEGER;
+        let sum1 = 0,
+          sum2 = 0,
+          sum3 = 0,
+          sum4 = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum1 = arr[i].reduce((a, b) => a + b);
+          sum2 = 0;
+          sum3 += arr[i][i];
+          sum4 += arr[i][arr.length - 1 - i];
+          for (let j = 0; j < arr.length; j++) {
+            sum2 += arr[j][i];
+          }
+          answer = Math.max(answer, sum1, sum2);
+        }
+        answer = Math.max(answer, sum3, sum4);
+
+        return answer;
+      }
+
+      let arr = [
+        [1, 1, 1, 1, 1],
+        [1, 2, 1, 3, 1],
+        [1, 1, 2, 2, 1],
+        [1, 11, 1, 2, 1],
+        [1, 1, 1, 1, 1],
+      ];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer = '';
+        let max = Number.MIN_SAFE_INTEGER;
+        let val = 0;
+        for (let x of arr) {
+          let temp = x
+            .toString()
+            .split('')
+            .reduce((a, b) => a + Number(b), 0);
+          if (max < temp) {
+            max = temp;
+            answer = x;
+          } else if (max === temp) {
+            answer = answer < x ? x : answer;
+          }
+        }
+
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        // x.charCodeAt() 해당 문자의 아스키코드값을 넘겨준다.
+        let answer = 0;
+        for (let x of s) {
+          //if ('A' <= x && x <= 'Z') answer++;
+          if (x == x.toUpperCase()) answer++;
+        }
+        return answer;
+      }
+
+      let str = 'KoreaTimeGood';
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
